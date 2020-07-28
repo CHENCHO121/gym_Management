@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
 
-    <div class="container" style="height: 100vh">
-        <h2 class="text-center admin text-primary font-weight-bold pb-5" style="padding-top: 6rem">Add Enquiry</h2>
+    <div class="container">
+        <h2 class="text-center admin text-primary font-weight-bold pb-5" style="padding-top: 8rem">Add Enquiry</h2>
         <form method="post">
             {% csrf_token %}
             <div class="form-group row">
@@ -44,7 +44,7 @@
                <div class="col-md-2">
 
                </div>
-               <div class="col-md-8">
+               <div class="col-md-8 pb-5">
                    <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Add Enquiry</button>
 
                </div>

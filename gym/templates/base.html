@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
-      <link rel="shortcut icon" type="image" href="{% static 'images/w3.jpg' %}">
+    <link rel="shortcut icon" type="image" href="{% static 'images/w3.jpg' %}">
     <title>Gym Management</title>
 
 </head>
@@ -28,6 +28,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
             {% if not request.user.is_staff %}
+                <li class="nav-item">
+                    <span class="nav-link text-capitalize">call us <strong>(17611798)</strong></span>
+                </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/hero_section">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -43,7 +46,7 @@
                 </li>
 
             {% elif request.user.is_staff %}
-                  <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link" href="/view_contact">Client Query</a>
                 </li>
                 <li class="nav-item dropdown">
@@ -96,26 +99,9 @@
 </nav>
 {% block content %}
 {% endblock content %}
-<div class="container-fluid mt-5 bg-dark text-white">
-     <footer>
-            <div class="row">
-                <div class="col-md-3 col-sm-4 mx-auto py-4 px-5">
-                    <a class="fa fa-facebook fa-1x mx-3 text-white" href="" style="font-size: 20px"></a>
-                        <a class="fa fa-youtube fa-1x mx-3 text-white" href="" style="font-size: 20px"></a>
-                         <a class="fa fa-instagram fa-1x mx-3 text-white " href="" style="font-size: 20px"></a>
-                         <a class="fa fa-whatsapp fa-1x mx-3 text-white" href="" style="font-size: 20px"></a>
-                </div>
-                <div class="col-md-12">
-                    <p class="text-center pb-2" style="font-size: 14px">&copy; Copyright 2018-2020 developed & maintained by Chencho Gyeltshen all reserved </p>
 
 
-                </div>
 
-            </div>
-             </footer>
-
-
-    </div>
 
 
 <!-- Optional JavaScript -->
@@ -131,7 +117,7 @@
         crossorigin="anonymous"></script>
 
 
- <!--Data table cdn start-->
+<!--Data table cdn start-->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
@@ -140,19 +126,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
 <script>
-    $(document).ready(function() {
-    $('#example').DataTable( {
-        dom: 'Bfrtip',
-        buttons: [
-            'copyHtml5',
-            'excelHtml5',
-            'csvHtml5',
-            'pdfHtml5'
-        ]
-    } );
-} );
+    $(document).ready(function () {
+        $('#example').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'copyHtml5',
+                'excelHtml5',
+                'csvHtml5',
+                'pdfHtml5'
+            ]
+        });
+    });
 </script>
-    <!--Data table cdn end-->
+<!--Data table cdn end-->
 
 </body>
 </html>

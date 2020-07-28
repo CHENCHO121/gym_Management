@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-   <div class="container" style="height: 75vh">
+   <div class="container">
    <h2 class="text-center text-primary font-weight-bold pb-5" style="padding-top: 5rem;">Admin Dashboard</h2>
    <div class="row">
        <div class="col-md-3 mydiv">
@@ -23,7 +23,7 @@
            <a href="/view_plan"><h4 class="text-dark text-center">Plans</h4></a>
              <hr class="rounded">
        </div>
-       <div class="col-md-3  mydiv">
+       <div class="col-md-3  mydiv mx-auto">
            <h1 class="text-primary text-center">{{ query }}</h1>
            <a href="/view_contact"><h4 class="text-dark text-center">Client Queries</h4></a>
              <hr class="rounded">
