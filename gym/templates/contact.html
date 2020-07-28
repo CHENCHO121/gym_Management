@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-fluid">
+        <h2 class="text-center font-weight-bold text-capitalize mt-3" style="padding-top: 4rem">contact us</h2>
+
+        <div class="row">
+            <div class="col-md-5">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-row mt-2">
+                        <div class="form-group col-md-12">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name"
+                                   required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputEmail4">Email</label>
+                            <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="Email"
+                                   required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="phone">Phone</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="msg">Message</label>
+                            <textarea name="message" id="msg" rows="5" cols="65" required placeholder="Message"></textarea>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Sign in</button>
+                </form>
+
+            </div>
+            <div class="col-md-7 ">
+                <div class="map mt-5">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.1631990293004!2d89.3751812145196!3d26.866555568544502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e3cb9a7567c637%3A0x1bcf48669512c2f7!2sYDF%2C%20Phuntsholing!5e0!3m2!1sen!2sbt!4v1595653843912!5m2!1sen!2sbt"
+                        width="100%" height="440" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    {% ifequal error "no" %}
+        <script>
+        alert("Message sent successfully, We will contact you very soon!")
+        window.location=("view_enquiry")
+        </script>
+
+    {% endifequal %}
+    {% ifequal error "yes" %}
+        <script>
+        alert("Something went wrong, Try again!")
+        </script>
+
+    {% endifequal %}
+{% endblock content %}

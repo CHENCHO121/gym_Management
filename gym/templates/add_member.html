@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container">
+        <h2 class="text-center admin text-primary font-weight-bold pb-5" style="padding-top: 6rem">Add Member</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label font-weight-bold">Name</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="contact" class="col-sm-2 col-form-label font-weight-bold">Contact</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="tel" class="form-control" id="contact" name="contact" placeholder="Phone Number">
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-2 col-form-label font-weight-bold">E-mail</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="E-mail">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="age" class="col-sm-2 col-form-label font-weight-bold">Age</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="text" class="form-control" id="age" name="age" placeholder="Age">
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label for="gender" class="col-sm-2 col-form-label font-weight-bold">Gender</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="radio" class="form-control" id="gender" name="gender" value="male" required>Male
+                    <input type="radio" class="form-control" id="gender" name="gender" value="female" required>Female
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label for="plan" class="col-sm-2 col-form-label font-weight-bold">Plan Name</label>
+                <div class="col-sm-10 col-md-8">
+                    <select class="form-control" id="plan" name="plan">
+                        {% for i in plan %}
+                        <option value="{{ i.name }}">{{ i.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="joineddate" class="col-sm-2 col-form-label font-weight-bold">Date of Join</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="date" class="form-control" id="joineddate" name="joindate" placeholder="Joined Date">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="expireddate" class="col-sm-2 col-form-label font-weight-bold">Date of Expiry</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="date" class="form-control" id="expireddate" name="expireddate"
+                           placeholder="Expirey Date">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="amt" class="col-sm-2 col-form-label font-weight-bold">Initial Amount(In Nu) </label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="text" class="form-control" id="amt" name="initialamount" placeholder="Initial Amount">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8">
+                    <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Add Enquiry</button>
+
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+
+    {% ifequal error "no" %}
+        <script>
+            alert("Data saved successfully!")
+            window.location = ("view_member")
+        </script>
+
+    {% endifequal %}
+    {% ifequal error "yes" %}
+        <script>
+            alert("Something went wrong, Try again!")
+        </script>
+
+    {% endifequal %}
+{% endblock content %}

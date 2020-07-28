@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+   <div class="container" style="height: 75vh">
+   <h2 class="text-center text-primary font-weight-bold pb-5" style="padding-top: 5rem;">Admin Dashboard</h2>
+   <div class="row">
+       <div class="col-md-3 mydiv">
+           <h1 class="text-primary text-center">{{ enq }}</h1>
+           <a href="/view_enquiry"><h4 class="text-dark text-center">Enquires</h4></a>
+           <hr class="rounded">
+       </div>
+        <div class="col-md-3  mydiv">
+         <h1 class="text-primary text-center">{{ mem }}</h1>
+           <a href="/view_member"><h4 class="text-dark text-center">Members</h4></a>
+             <hr class="rounded">
+       </div>
+        <div class="col-md-3  mydiv">
+          <h1 class="text-primary text-center">{{ equip }}</h1>
+           <a href="/view_equipment"><h4 class="text-dark text-center">Equipments</h4></a>
+             <hr class="rounded">
+       </div>
+        <div class="col-md-3  mydiv pb-3">
+           <h1 class="text-primary text-center">{{ plan }}</h1>
+           <a href="/view_plan"><h4 class="text-dark text-center">Plans</h4></a>
+             <hr class="rounded">
+       </div>
+       <div class="col-md-3  mydiv">
+           <h1 class="text-primary text-center">{{ query }}</h1>
+           <a href="/view_contact"><h4 class="text-dark text-center">Client Queries</h4></a>
+             <hr class="rounded">
+       </div>
+
+   </div>
+
+   </div>
+{% endblock content %}

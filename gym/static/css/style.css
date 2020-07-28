@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+.nav-link{
+    color: white !important;
+}
+.nav-link:hover{
+    background-color: lightblue !important;
+    border-radius: 10px;
+}
+
+.dropdown-item{
+    text-transform: capitalize;
+}
+
+.fa-facebook{
+    color: white;
+}
+hr{
+    border-top:8px solid lightblue ;
+    border-radius:5px;
+
+}
+
+.mydiv:hover{
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+    transform: translateY(-20px);
+    transition:0.5s;
+}
+
+
+a:link {
+  text-decoration: none;
+}

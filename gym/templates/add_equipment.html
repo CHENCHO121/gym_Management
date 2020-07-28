@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="container" style="height: 100vh">
+        <h2 class="text-center admin text-primary font-weight-bold pb-5" style="padding-top: 6rem">Add Equipment</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group row">
+                <label for="name" class="col-sm-2 col-form-label font-weight-bold">Name</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="price" class="col-sm-2 col-form-label font-weight-bold">Price(In Nu)</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="text" class="form-control" id="price" name="price" placeholder="Price">
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <label for="unit" class="col-sm-2 col-form-label font-weight-bold">Unit</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="text" class="form-control" id="unit" name="unit" placeholder="Unit">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="date" class="col-sm-2 col-form-label font-weight-bold">Purchase Date</label>
+                <div class="col-sm-10 col-md-8">
+                    <input type="date" class="form-control" id="date" name="date" placeholder="Date">
+                </div>
+
+            </div>
+             <div class="form-group row">
+                <label for="desc" class="col-sm-2 col-form-label font-weight-bold">Description</label>
+                <div class="col-sm-10 col-md-8">
+                    <textarea name="description" id="desc " cols="90" rows="5"></textarea>
+                </div>
+
+            </div>
+           <div class="row">
+               <div class="col-md-2">
+
+               </div>
+               <div class="col-md-8">
+                   <button type="submit" class="btn btn-outline-primary btn-lg btn-block">Add Equipment</button>
+
+               </div>
+           </div>
+
+        </form>
+
+    </div>
+
+
+    {% ifequal error "no" %}
+        <script>
+        alert("Data saved successfully!")
+        window.location=("view_equipment")
+        </script>
+
+    {% endifequal %}
+    {% ifequal error "yes" %}
+        <script>
+        alert("Something went wrong, Try again!")
+        </script>
+
+    {% endifequal %}
+{% endblock content %}
